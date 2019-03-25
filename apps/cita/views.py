@@ -11,7 +11,6 @@ from django.db.models.functions import TruncMonth
 from django.db.models import Q, Sum, Count
 
 # Create your views here.
-#
 def inicio(request):
     contacto = False
     if request.method == 'POST':
