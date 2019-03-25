@@ -1,0 +1,90 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load i18n widget_tweaks %}
+
+{% block title %} Agregar Cita{% endblock %}
+
+{% block content %}
+	<section class="content">
+      	<div class="box">
+	       	<section class="content-header">
+      			<div class="page-header">
+      				<h1>
+				    	<i class="fa fa-calendar"></i>
+					    <span>{{titulo}}</span>
+			  		</h1>
+      			</div>
+			  	<ol class="breadcrumb">
+			        <li><a href="{% url 'panel' %}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			        <li><a href="{% url 'lista_citas' %}"><i class="fa fa-calendar"></i> Citas</a></li>
+			        <li class="active">{{titulo}}</li>
+			    </ol>
+			</section>
+	        <div class="box-body">
+	        	<form id="agregar-suscursal" class="form form-horizontal validate-form" method="post">
+				    {% csrf_token %} 
+				  	{% for hidden in cita_form.hidden_fields %} {{ hidden }} {% endfor %}
+
+				    <div class='form-group'>
+				        <label class="col-md-2 control-label control-label-required" for="{{ cita_form.fecha_cita.id_for_label }}">{{ cita_form.fecha_cita.label }}</label>
+				        <div class='col-lg-6 col-md-6 controls'>
+					        <div class="input-group">					            
+						        <div class="input-group-addon">
+		                      		<i class="fa fa-calendar"></i>
+		                    	</div>
+		                    	{% render_field cita_form.fecha_cita class="form-control" id="datepicker" autocomplete="off" %} 
+					        </div>
+					        {{ cita_form.fecha_cita.errors }}
+				        </div>
+				    </div>
+
+				    <div class='form-group'>
+				        <label class="col-md-2 control-label control-label-required" for="{{ cita_form.hora_cita.id_for_label }}">{{ cita_form.hora_cita.label }}</label>
+				        <div class='col-lg-6 col-md-6 controls'>
+					        <div class="input-group">
+						        <div class="input-group-addon">
+		                      		<i class="fa fa-clock-o"></i>
+		                    	</div>
+		                    	{% render_field cita_form.hora_cita class="form-control timepicker" autocomplete="off" %}
+					        </div>
+					        {{ cita_form.hora_cita.errors }}
+				        </div>
+				    </div>
+
+				    <div class='form-group'>
+				        <label class="col-md-2 control-label control-label-required" for="{{ cita_form.observacion.id_for_label }}">{{ cita_form.observacion.label }}</label>
+				        <div class='col-lg-6 col-md-6 controls'>
+				            {% render_field cita_form.observacion class="form-control"%} 
+				            {{ cita_form.observacion.errors }}
+				        </div>
+				    </div>
+				    {{ cita_form.non_field_errors }}
+				    <div class="form-group">
+				        <div class="col-sm-offset-2 col-sm-10">
+				            <button type="submit" class="btn btn-primary btn-responsive"><i class="fa fa-floppy-o"></i> Agendar </button>
+				            <a class="btn btn-default btn-responsive" href="{% url 'lista_citas' %}">Cancelar</a>
+				        </div>
+				    </div>  
+	        </div>
+      	</div>
+    </section>
+
+{% endblock %}
+
+{% block extraresources %}
+	<link rel="stylesheet" href="{% static 'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/timepicker/bootstrap-timepicker.min.css' %}">
+	<script src="{% static 'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %} "></script>
+	<script src="{% static 'plugins/timepicker/bootstrap-timepicker.min.js' %} "></script>
+
+	<script type="text/javascript">
+		//Date picker
+	    $('#datepicker').datepicker({
+	      autoclose: true
+	    })
+	    //Timepicker
+	    $('.timepicker').timepicker({
+	      showInputs: false,
+	      showMeridian: false,
+	      minuteStep: 1,
+	    })
+	</script>
+{% endblock %}

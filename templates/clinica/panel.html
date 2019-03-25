@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Portal del Cliente - {{ user.perfilusuario.comercio.nombre}} {% endblock %}
+
+{% block content %}
+	<section class="content-header">
+	  	<h1>
+	    	Dashboard
+	    	<small>Panel</small>
+	  	</h1>
+	  	<ol class="breadcrumb">
+	        <li class="active">Dashboard</li>
+	    </ol>
+	</section>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-lg-3 col-xs-6">
+	          	<div class="small-box bg-green">
+		            <div class="inner">
+		              	<h3>0<sup style="font-size: 20px"></sup></h3>
+		              	<p>Citas</p>
+		            </div>
+		            <div class="icon">
+		              <i class="fa fa-calendar"></i>
+		            </div>
+		            <a href="#" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+	          	</div>
+	        </div>
+      	</div>
+	</section>
+{% endblock %}
+
+{% block extraresources %}
+
+{% endblock %}

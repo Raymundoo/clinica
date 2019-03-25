@@ -1,0 +1,146 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %} Panel {% endblock %}</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!--CSS-->
+		<link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'bower_components/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'bower_components/Ionicons/css/ionicons.min.css' %}">
+		<link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
+		<link rel="stylesheet" href="{% static 'dist/css/skins/_all-skins.min.css' %}">
+		<link rel="stylesheet" href="{% static 'dist/css/style.css' %}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="wrapper">
+			<header class="main-header">
+			    <a href="{% url 'panel' %}" class="logo">
+			      <span class="logo-mini"></span> <span class="logo-lg"><b>Portal del</b> Cliente</span>			      	
+			    </a>
+			    <nav class="navbar navbar-static-top">
+			      	<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+			        	<span class="sr-only">Toggle navigation</span>
+			      	</a>
+			      	<div class="navbar-custom-menu">
+				        <ul class="nav navbar-nav">
+				          <li class="dropdown user user-menu">
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				              <img src="{% static 'images/avatar.jpg' %}" class="user-image" alt="Image">
+				              <span class="hidden-xs">{{ request.user.first_name|capfirst }}</span>
+				            </a>
+				            <ul class="dropdown-menu">
+				              <!-- User image -->
+				              <li class="user-header">
+				                <img src="{% static 'images/avatar.jpg' %}" class="img-circle" alt="Avatar">
+				                <p>
+				                  {{ request.user.first_name|capfirst }}
+				                </p>
+				              </li>
+				              <!-- Menu Footer-->
+				              <li class="user-footer">
+				                <div class="pull-left">
+				                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+				                </div>
+				                <div class="pull-right">
+				                  <a href="{% url 'logout' %}" class="btn btn-default btn-flat">Salir</a>
+				                </div>
+				              </li>
+				            </ul>
+				          </li>
+				          <li>
+				            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+				          </li>
+				        </ul>
+			      	</div>
+			    </nav>
+			</header>
+
+			<aside class="main-sidebar">
+			    <section class="sidebar">
+			      	<div class="user-panel">
+			      		<div class="pull-left image">
+				          <img src="{% static 'images/avatar.jpg' %}" class="img-circle">
+				        </div>
+				        <div class="pull-left info">
+				          <p>{{ request.user.first_name|capfirst }}</p>
+				          <small>Cliente</small>
+				        </div>
+			      	</div>
+			      	<ul class="sidebar-menu" data-widget="tree">
+			      		<li class="header">MENU DE NAVEGACIÓN</li>
+				        <li class="active">
+				          	<a href="{% url 'panel' %}">
+				            	<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+				          	</a>
+				        </li>
+				        <li class="">
+				          	<a href="{% url 'lista_citas' %}">
+				            	<i class="fa fa-calendar"></i> <span>Citas</span>
+				          	</a>
+				        </li>
+				        <li class="">
+				          	<a href="{% url 'documentacion' %}">
+				            	<i class="fa fa-book"></i> <span>Documentación</span>
+				          	</a>
+				        </li>
+			      	</ul>
+			    </section>
+			</aside>
+
+			<div class="content-wrapper">
+				<div class="content-header">
+			      <h1>
+			        Documentación
+			      </h1>
+			      <ol class="breadcrumb">
+			        <li><a href="{% url 'panel' %}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			        <li class="active">Documentación</li>
+			      </ol>
+			    </div>
+
+			    <!-- Main content -->
+			    <div class="content body">
+			      	
+			      	<section id="introduction">
+				        <h2 class="page-header"><a href="#introduction">Introducion</a></h2>
+				        <p class="lead">
+				          En esta sección se describira paso a paso las funciones que tiene el portal para los clientes de la clinica.
+				        </p>
+			      	</section><!-- /#introduction -->
+			    </div>
+			</div>
+
+			<footer class="main-footer">
+				<div class="pull-right hidden-xs">
+				  <b>Equipo</b> Crustaceo
+				</div>
+				<strong>Copyright &copy; 2018 <a href="#">Crustaceo</a>.</strong> Todos los derechos reservados.
+			</footer>
+
+			<aside class="control-sidebar control-sidebar-dark">
+			    <div class="tab-content">
+			      <div class="tab-pane" id="control-sidebar-home-tab">
+			      </div>     
+			    </div>
+			</aside>
+			<div class="control-sidebar-bg"></div>
+		</div>
+		<!--Scripts-->
+
+		<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %} "></script>
+		<script src="{% static 'bower_components/jquery-ui/jquery-ui.min.js' %} "></script>
+		<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %} "></script>
+		<script src="{% static 'bower_components/datatables.net/js/jquery.dataTables.min.js' %} "></script>
+		<script src="{% static 'bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %} "></script>
+		<script src="{% static 'bower_components/fastclick/lib/fastclick.js' %} "></script>
+		<script src="{% static 'dist/js/adminlte.min.js' %} "></script>
+		<script src="{% static 'dist/js/demo.js' %} "></script>
+
+		{% block extraresources %}
+				    
+		{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,142 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Preguntas Frecuentes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Clinica" />
+		<meta name="keywords" content="Clinica" />
+		<meta name="author" content="FREEHTML5.CO" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Animate.css -->		
+		<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+		<!-- Simple Line Icons -->
+		<link rel="stylesheet" href="{% static 'css/simple-line-icons.css' %}">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+		<link rel="stylesheet" id="theme-switch" href="{% static 'css/style.css' %}">
+		<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+		<style type="text/css">
+			#fh5co-home,#fh5co-home .gradient{background: #fff;}
+			#fh5co-home .text-inner h2{font-weight: bold;}
+			#fh5co-home .text-inner h2, #fh5co-home .text-inner p{color:#000;}
+			#fh5co-home, #fh5co-home .text-wrap{min-height: 600px; height: inherit;}
+			#fh5co-home .text-inner {vertical-align: inherit !important;}
+			.faq{margin-top: 100px; text-align: left;}
+			#fh5co-header {
+			    position: fixed !important;
+			    background: #fff;
+			    -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+			    -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+			    -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+			    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+			    margin-top: 0px;
+			    top: 0;
+			}
+
+			#fh5co-header #navbar li a {
+			    color: rgba(0, 0, 0, 0.5);
+			    -webkit-transition: 0.3s;
+			    -o-transition: 0.3s;
+			    transition: 0.3s;
+			}
+
+			#fh5co-header #navbar li.active a {
+			    background: transparent;
+			    background: none;
+			    color: #52d3aa;
+			}
+
+			#fh5co-header .navbar-brand {
+			    color: #52d3aa;
+			}
+		</style>
+	</head>
+	<body>
+		<header role="banner" id="fh5co-header" class="navbar-fixed-top fh5co-animated slideInDown" style="position: fixed !important">
+			<div class="container">
+			    <nav class="navbar navbar-default">
+			        <div class="navbar-header">
+						<a href="{% url 'inicio' %}" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+			         	<a class="navbar-brand" href="{% url 'inicio' %}">Clinica</a> 
+			        </div>
+			    </nav>
+			 </div>
+		</header>
+
+		<section id="fh5co-home" data-section="home">
+			<div class="gradient"></div>
+			<div class="container">
+				<div class="text-wrap">
+					<div class="text-inner">
+						<div class="row">
+							
+							<div class="col-md-10 faq col-md-offset-2">
+								<h1 style="color: #000; text-align: center;">Preguntas Frecuentes</h1>
+								<h2>¿Quienes somos?</h2>
+								<p>Somos un hospital en Cancún que brinda a nuestros clientes atención integral, oportuna y con calidez humana, en un ambiente confortable. </p>
+								<h2>¿Cómo puedo crear una cuenta?</h2>
+								<p>La opción de registro se encuentra en la parte superior derecha de la barra de navegación o si desea lo puede hacer pulsado en este Enlace.</p>
+								<h2>¿Cómo puedo hacer una cita?</h2>
+								<p>Tienes que iniciar sesión, en la parte izquierda seleccionar la opción citas, preionar el botón de "Agregar cita" y posteriormente llenar el formulario. Puede acceder a su cuenta desde este Enlace.</p>
+								<h2>¿Quienes somos?</h2>
+								<p>Somos un hospital en Cancún que brinda a nuestros clientes atención integral, oportuna y con calidez humana, en un ambiente confortable.</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="footer" role="contentinfo">
+			<div class="container">
+				<div class="">
+					<div class="col-md-12 text-center">
+						<p>&copy; Clinica Cancún. Todos los derechos reservados. </p>
+						<p><span><a href="{% url 'inicio' %}#fh5co-work">Servicios</a> | <a href="{% url 'faq' %}">FAQ</a> | <a href="{% url 'inicio' %}#fh5co-contact">Contacto <a>| <a href="{% url 'login' %}">Acceso a clientes</a></span></p>
+						<p><a href="{% url 'faq' %}">FAQ</a></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="social social-circle">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			function myFunction() {
+				window.location.replace("{% url 'login' %}");
+			}
+		</script>
+		<!-- jQuery -->		
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<!-- jQuery Easing -->		
+		<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+		<!-- Bootstrap -->		
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<!-- Waypoints -->		
+		<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+		<!-- Stellar Parallax -->		
+		<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+		
+		<script src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>

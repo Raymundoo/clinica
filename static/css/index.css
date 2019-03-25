@@ -1,0 +1,10 @@
+/* CLINICA */
+.alert-clinica{margin: 8px 6px 0px 5px; word-wrap: break-word; padding: 20px 30px; font-size: 16px;}
+.content-wrapper .container{width: 100%;}
+.page-header>h1{font-size:30px;}
+
+.tabla-generica{width: 100%;}
+			
+@media only screen and (max-width: 768px) {
+  .btn-responsive{width: 100%; margin-bottom: 10px;}
+}

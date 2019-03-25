@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Lista de Citas {% endblock %}
+
+{% block content %}
+	<section class="content">
+      	<div class="box">
+      		<section class="content-header">
+      			<div class="page-header">
+      				<h1>
+				    	<i class="fa fa-calendar"></i>
+					    <span>Mis Citas</span>
+			  		</h1>
+      			</div>
+			  	<ol class="breadcrumb">
+			        <li><a href="{% url 'panel' %}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			        <li class="active">Mis Citas</li>
+			    </ol>
+			</section>
+
+			<section class="content-header">
+      			<div class="row">
+			  	<div class="col-md-12 text-center">
+				    <a href="{% url 'agregar_cita' %}" class="btn btn-success fileinput-button btn-responsive">
+				    	<i class="fa fa-plus"></i><span> Agregar Cita</span>
+				    </a>
+			  	</div>   
+			</div>
+			</section>
+
+        	<div class="box-body responsive-table">
+			    <div class="scrollable-area">
+		        	<table class="tabla-generica table table-striped table-bordered nowrap">
+		            	<thead>
+			                <tr>
+			                	<th>Nombre</th>
+			                  	<th>Fecha</th>
+			                  	<th>Hora</th>
+			                  	<th>Observación</th>
+			                  	<th>Acción</th>
+			                </tr>
+		                </thead>
+		                <tbody>
+		                	{% for cita in lista_citas %}
+				                <tr>
+				                	<td>{{cita.usuario.get_full_name}}</td>
+				                  	<td>{{cita.fecha_cita}}</td>
+				                  	<td>{{cita.hora_cita}}</td>
+				                  	<td>{{cita.observacion}}</td>
+				                  	<td>
+					                  	<div class="text-left">
+								            <a class="btn btn-success btn-sm" href="{% url 'editar_cita' cita.id %}" >
+								              <i class="fa fa-edit"></i>
+								            </a>
+								            <a class="btn btn-danger btn-sm" href="{% url 'eliminar_cita' cita.id %}">
+								              <i class="fa fa-times"></i>
+								            </a>
+							          	</div>
+							        </td>
+				                </tr>	
+				            {% endfor %}              
+		                </tbody>
+		                <tfoot>
+			                <tr>
+			                	<th>Nombre</th>
+			                  	<th>Fecha</th>
+			                  	<th>Hora</th>
+			                  	<th>Observación</th>
+			                  	<th>Acción</th>
+			                </tr>
+		                </tfoot>
+	              	</table>
+	            </div>
+	        </div>
+      	</div>
+    </section>
+{% endblock %}

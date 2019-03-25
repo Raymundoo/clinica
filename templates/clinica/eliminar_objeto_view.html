@@ -1,0 +1,55 @@
+{% extends 'base.html' %}  {% load staticfiles %} {% load i18n widget_tweaks %}
+
+{% block title %} {{ titulo }} {% endblock %}
+
+{% block content %}
+	<section class="content">
+      	<div class="box">
+		    <section class="content-header">
+      			<div class="page-header">
+      				<h1>
+				    	<i class="fa fa-calendar"></i>
+					    <span>{{titulo}}</span>
+			  		</h1>
+      			</div>
+			  	<ol class="breadcrumb">
+			        <li><a href="{% url 'panel' %}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+			        <li><a href="{% url 'lista_citas' %}"><i class="fa fa-calendar"></i> Citas</a></li>
+			        <li class="active">{{titulo}}</li>
+			    </ol>
+			</section>
+
+	        <div class="box-body">
+	        	<form class="form form-horizontal validate-form" method="post">
+				    {% csrf_token %} 
+				    <div class="form-group">
+				        <div class=" col-sm-8">
+				            <div class="callout alert alert-danger" role="alert"> ¿Estás seguro que deseas <strong>"{{ titulo }}"</strong>?
+				                <p> Todos los objetos siguientes y sus elementos asociados serán eliminados: </p>
+				            </div>
+				            <h2>Resumen</h2>
+				            <ul>
+				                {% for model_name, object_count in model_count %}
+				                <li>{{ model_name|capfirst }}: {{ object_count }}</li>
+				                {% endfor %}
+				            </ul>
+				             <h2>Elementos</h2>
+				            <p>
+				                <ul>
+				                    {{ deletable_objects|unordered_list }}
+				                </ul>
+				            </p>
+				        </div>
+				    </div>
+
+				    <div class="form-group">
+				        <div class="col-sm-offset-2 col-sm-10">
+				            <button type="submit" class="btn btn-danger btn-responsive"><i class="fa fa-times"></i> Eliminar </button>
+				            <a class="btn btn-default btn-responsive" href="{{url_regreso}}">Cancelar</a>
+				        </div>
+				    </div>
+				</form>	
+	        </div>
+      	</div>
+    </section>
+{% endblock %}
