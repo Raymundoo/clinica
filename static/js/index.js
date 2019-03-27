@@ -1,3 +1,4 @@
+//DataTables
 $(function () {
 	var table = $('.tabla-generica').DataTable({
 		responsive: true,
@@ -22,4 +23,22 @@ $(function () {
 	        }
 	    },
 	});
-})
+});
+
+
+jQuery(document).ready(function(){
+	var location = window.location.pathname;
+	if (location=="/citas/agregar/" || location.includes("/citas/editar/")) {
+		//Date picker
+	    $('#datepicker').datepicker({
+	    	autoclose: true,
+	    	startDate: "yesterday",
+	    })
+	    //Timepicker
+	    $('.timepicker').timepicker({
+	      showInputs: false,
+	      showMeridian: false,
+	      minuteStep: 1,
+	    })
+	}
+});

@@ -25,44 +25,10 @@
 		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
 		<link rel="stylesheet" id="theme-switch" href="{% static 'css/style.css' %}">
 		<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-		<style type="text/css">
-			#fh5co-home,#fh5co-home .gradient{background: #fff;}
-			#fh5co-home .text-inner h2{font-weight: bold;}
-			#fh5co-home .text-inner h2, #fh5co-home .text-inner p{color:#000;}
-			#fh5co-home, #fh5co-home .text-wrap{min-height: 600px; height: inherit;}
-			#fh5co-home .text-inner {vertical-align: inherit !important;}
-			.faq{margin-top: 100px; text-align: left;}
-			#fh5co-header {
-			    position: fixed !important;
-			    background: #fff;
-			    -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
-			    -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
-			    -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
-			    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
-			    margin-top: 0px;
-			    top: 0;
-			}
 
-			#fh5co-header #navbar li a {
-			    color: rgba(0, 0, 0, 0.5);
-			    -webkit-transition: 0.3s;
-			    -o-transition: 0.3s;
-			    transition: 0.3s;
-			}
-
-			#fh5co-header #navbar li.active a {
-			    background: transparent;
-			    background: none;
-			    color: #52d3aa;
-			}
-
-			#fh5co-header .navbar-brand {
-			    color: #52d3aa;
-			}
-		</style>
 	</head>
 	<body>
 		<header role="banner" id="fh5co-header" class="navbar-fixed-top fh5co-animated slideInDown" style="position: fixed !important">
@@ -76,7 +42,7 @@
 			 </div>
 		</header>
 
-		<section id="fh5co-home" data-section="home">
+		<section id="fh5co-home" class="section-faq" data-section="home">
 			<div class="gradient"></div>
 			<div class="container">
 				<div class="text-wrap">
@@ -84,7 +50,7 @@
 						<div class="row">
 							
 							<div class="col-md-10 faq col-md-offset-2">
-								<h1 style="color: #000; text-align: center;">Preguntas Frecuentes</h1>
+								<h1>Preguntas Frecuentes</h1>
 								<h2>¿Quienes somos?</h2>
 								<p>Somos un hospital en Cancún que brinda a nuestros clientes atención integral, oportuna y con calidez humana, en un ambiente confortable. </p>
 								<h2>¿Cómo puedo crear una cuenta?</h2>
@@ -121,11 +87,6 @@
 			</div>
 		</footer>
 
-		<script type="text/javascript">
-			function myFunction() {
-				window.location.replace("{% url 'login' %}");
-			}
-		</script>
 		<!-- jQuery -->		
 		<script src="{% static 'js/jquery.min.js' %}"></script>
 		<!-- jQuery Easing -->		

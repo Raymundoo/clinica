@@ -1,0 +1,42 @@
+/*Home*/
+#fh5co-intro{padding: 0;}
+#fh5co-contact label{font-weight: normal;}
+.carousel-inner .item img{width: 100%;}
+.section-home .text-inner{vertical-align: inherit !important;}
+.carousel{    margin-top: 124px !important;}
+.section-home, .section-home .text-wrap{height: 820px;}
+#fh5co-about .section-heading{margin: 0;padding: 0;}
+
+/*Login*/
+.error-login{color:red;}
+.login .section-heading{padding-bottom: 0;}
+.login .form-group {text-align: left;}
+.login .form-group:last-child{text-align: center;}
+.login .form-group .form-control{background: #fff !important;}
+.login .text-inner h2{color: #000!important;}
+.login form .col-md-offset-3 {border-radius: 2px; background: #ffffffa6; color: #000; padding: 10px;}
+.login form label{font-weight: normal;}
+
+/*FAQ*/
+.section-faq, .section-faq .gradient{background: #fff !important;}
+.section-faq .text-inner h2{font-weight: bold !important;}
+.section-faq .text-inner h2, #fh5co-home .text-inner p{color:#000 !important;}
+.section-faq , .section-faq  .text-wrap{min-height: 600px !important; height: inherit !important;}
+.section-faq  .text-inner {vertical-align: inherit !important;}
+.faq{margin-top: 100px; text-align: left;}
+.section-faq  { background: #fff; -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1); -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1); margin-top: 0px; top: 0;}
+.section-faq  #navbar li a {color: rgba(0, 0, 0, 0.5); -webkit-transition: 0.3s; -o-transition: 0.3s; transition: 0.3s;}
+.section-faq  #navbar li.active a {background: transparent; background: none; color: #52d3aa; }
+.section-faq  .navbar-brand {color: #52d3aa;}
+.section-faq .faq h1{color: #000 !important; text-align: center;}
+
+/*Mediaquerys*/
+@media only screen and (max-width: 990px) {
+	#fh5co-home, #fh5co-home .text-wrap{height: 640px;}
+}
+@media only screen and (max-width: 600px) {
+	#fh5co-home, #fh5co-home .text-wrap{height: 550px !important;}
+}
+@media only screen and (max-width: 400px) {
+	#fh5co-home, #fh5co-home .text-wrap{height: 460px !important;}
+}

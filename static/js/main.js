@@ -472,3 +472,17 @@
 
 
 }());
+
+jQuery(document).ready(function(){
+	//Home
+	$("#btn-login").click(function(){
+		window.location.replace("/accounts/login/");
+	});
+
+	$(".limpiar").click(function(){
+		document.getElementById("name").value = '';
+		document.getElementById("email").value = '';
+		document.getElementById("phone").value = '';
+		document.getElementById("message").value = '';
+	});
+});
